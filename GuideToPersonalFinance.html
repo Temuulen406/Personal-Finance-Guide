@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to Personal Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato&display=swap" rel="stylesheet">
+    <style>
+        /* Minimalist Luxury Theme Styling */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            transition: background-color 0.5s, color 0.5s;
+            scroll-behavior: smooth;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f5f5f5;
+        }
+        header, footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 30px 10px;
+            font-size: 1.5em;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 400;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffbf00;
+        }
+        .dark-mode nav {
+            background-color: #222;
+        }
+        .dark-mode nav a:hover {
+            color: #ffd700;
+        }
+        .section-title {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .section-title:hover {
+            background-color: #ffbf00;
+            color: #333;
+        }
+        .dark-mode .section-title:hover {
+            background-color: #ffd700;
+            color: #222;
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-left: 4px solid #ffbf00;
+            border-radius: 5px;
+            color: #333;
+        }
+        .dark-mode .content {
+            background-color: #555;
+            color: #ddd;
+            border-left-color: #ffd700;
+        }
+        .flashcard-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .flashcard {
+            background-color: #ffbf00;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .flashcard.flipped {
+            background-color: #333;
+            color: #ffbf00;
+        }
+        footer {
+            background-color: #222;
+            padding: 20px;
+            font-size: 1em;
+            color: #bbb;
+            text-align: center;
+        }
+        .dark-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ffbf00;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Guide to Personal Finance</h1>
+        <p>Master the essentials of wealth management and financial independence with this exclusive guide.</p>
+    </header>
+
+    <nav>
+        <a href="#financial-basics">Financial Basics</a>
+        <a href="#about">About</a>
+        <a href="#flashcards">Vocabulary</a>
+    </nav>
+
+    <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <!-- Financial Basics Section -->
+    <section id="financial-basics">
+        <h2>Financial Basics</h2>
+        <div class="section-title" onclick="toggleContent('budgeting')">Budgeting</div>
+        <div id="budgeting" class="content">
+            <p>Budgeting is the cornerstone of effective financial management. Start by listing all sources of income, followed by expenses, categorized as essentials (like housing, transportation) and discretionary (like dining out, entertainment).</p>
+        </div>
+        
+        <div class="section-title" onclick="toggleContent('saving')">Saving</div>
+        <div id="saving" class="content">
+            <p>Building wealth begins with disciplined saving. Aim to allocate a set percentage of your income to a high-yield savings account. Consider creating a diversified portfolio of saving goals: short-term for luxuries, long-term for life aspirations.</p>
+        </div>
+        
+        <div class="section-title" onclick="toggleContent('spending')">Spending Wisely</div>
+        <div id="spending" class="content">
+            <p>Understanding the difference between needs and wants is the key to spending wisely. Needs are essentials, like food, shelter, and transportation. Wants are things you enjoy but could live without, like dining out or entertainment.</p>
+        </div>
+        
+        <div class="section-title" onclick="toggleContent('earning')">Earning Money</div>
+        <div id="earning" class="content">
+            <p>Earning your own money gives you freedom and independence. You may have options like part-time jobs, freelancing, or small businesses (like tutoring or selling crafts). Consider what you enjoy and what skills you have.</p>
+        </div>
+        
+        <div class="section-title" onclick="toggleContent('investing')">Investing</div>
+        <div id="investing" class="content">
+            <p>Investing allows you to grow your wealth by putting your money to work. Unlike saving, which keeps your money safe in a bank, investing involves some risk in exchange for potential growth.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title" onclick="toggleContent('about-content')">About This Guide</h2>
+        <div id="about-content" class="content">
+            <p>Hello, I’m Temuulen Baasanbat, an 11th-grade student from Ulaanbaatar. I created this guide to help teenagers understand the importance of personal finance. My goal is to help young people make smart financial choices early on because I believe that financial literacy empowers us to achieve our dreams and build stable, fulfilling lives. Through this guide, I want to make complex financial concepts easy and accessible to all of us.</p>
+        </div>
+    </section>
+
+    <!-- Flashcards Section -->
+    <section id="flashcards">
+        <h2 class="section-title" onclick="toggleContent('flashcard-content')">Personal Finance Vocabulary</h2>
+        <div id="flashcard-content" class="content">
+            <div class="flashcard-container">
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Income', 'Money earned from work or investments.')">Income</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Budget', 'A plan for managing income and expenses.')">Budget</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Savings', 'Money set aside for future use.')">Savings</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Interest', 'Money earned on savings or investments.')">Interest</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Investment', 'Putting money into assets to grow wealth.')">Investment</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Debt', 'Money owed to others.')">Debt</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Asset', 'Anything of value that you own.')">Asset</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Liability', 'Money or obligations owed to others.')">Liability</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Net Worth', 'The difference between your assets and liabilities.')">Net Worth</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Credit', 'Borrowed money you must repay with interest.')">Credit</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Dividend', 'A portion of a company’s earnings distributed to shareholders.')">Dividend</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Inflation', 'The rise in prices of goods and services over time.')">Inflation</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Risk', 'The potential loss associated with an investment.')">Risk</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Return', 'The gain or loss on an investment.')">Return</div>
+                <div class="flashcard" onclick="toggleFlashcard(this, 'Mortgage', 'A loan to purchase property, paid back over time.')">Mortgage</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Luxury Personal Finance Guide. Created by Temuulen Baasanbat. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle display of specific sections
+        function toggleContent(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = section.style.display === "block" ? "none" : "block";
+        }
+
+        // Toggle flashcard between term and definition
+        function toggleFlashcard(element, term, definition) {
+            if (element.classList.contains('flipped')) {
+                element.innerText = term;
+                element.classList.remove('flipped');
+            } else {
+                element.innerText = definition;
+                element.classList.add('flipped');
+            }
+        }
+
+        // Dark mode toggle functionality
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
